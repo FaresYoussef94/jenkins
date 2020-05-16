@@ -20,4 +20,6 @@ RUN curl -O https://bootstrap.pypa.io/get-pip.py && \
     python get-pip.py && \
     pip install awscli --upgrade
 
+COPY backup.sh /tmp/backup.sh
+
 CMD /usr/sbin/sshd -D
