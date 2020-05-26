@@ -10,22 +10,22 @@ services:
       - "$PWD/jenkins_home:/var/jenkins_home"
     networks:
       - net
-  # remote_host:
-  #   container_name: remote_host
-  #   image: remote_host
-  #   build:
-  #     context: centos7
-  #   networks:
-  #     - net
-  # db_host:
-  #   container_name: db
-  #   image: mysql:5.7
-  #   environment:
-  #     - "MYSQL_ROOT_PASSWORD=pwd999"
-  #   volumes:
-  #     - "$PWD/db_data:/var/lib/mysql"
-  #   networks:
-  #     - net
+  remote_host:
+    container_name: remote_host
+    image: remote_host
+    build:
+      context: centos7
+    networks:
+      - net
+  db_host:
+    container_name: db
+    image: mysql:5.7
+    environment:
+      - "MYSQL_ROOT_PASSWORD=pwd999"
+    volumes:
+      - "$PWD/db_data:/var/lib/mysql"
+    networks:
+      - net
   git:
     container_name: git-server
     image: "gitlab/gitlab-ce:latest"
